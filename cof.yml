@@ -1,0 +1,19 @@
+width:
+  - 300
+  - 400
+  - 600
+  - 800
+  - 1200
+  - 3800
+height: '16:9'
+background:
+  - '000'
+  - 'f2f'
+  - '3ff332'
+foreground:
+  - 'fff'
+  - '2f2'
+  - 'abb3ff'
+format:
+  - png
+  - jpg
