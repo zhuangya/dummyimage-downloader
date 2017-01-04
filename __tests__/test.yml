@@ -1,0 +1,7 @@
+width:
+  - 10
+  - 20
+height: '4:3'
+background: 'fff'
+foreground:
+  - '000'

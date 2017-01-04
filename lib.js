@@ -45,7 +45,6 @@ function generateImageURL(configPath, text) {
 }
 
 function download(url, name, dist=process.cwd()) {
-  console.log('downloading ', url);
   return new Promise((resolve, reject) => {
     got.stream(url).pipe(fs.createWriteStream(path.join(dist, name))).on('close', () => {
       return resolve(name);
