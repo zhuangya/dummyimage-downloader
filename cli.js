@@ -11,13 +11,19 @@ const cli = meow(`
 
     Options
       --config, -c config file(in yaml)
+      --dist, -d download destination
 
     Examples
       $ dmd 4 -c colorful.yml
 `, {
   alias: {
-    c: 'config'
+    c: 'config',
+    d: 'dist'
   }
 });
+
+if (!Boolean(cli.input.length)) {
+  cli.showHelp()
+}
 
 dmd(cli.input[0], cli.flags);
