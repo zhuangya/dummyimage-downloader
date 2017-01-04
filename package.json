@@ -27,6 +27,10 @@
     "meow": "^3.7.0",
     "rx": "^4.1.0"
   },
+  "bin": {
+    "dmd": "./cli.js"
+  },
+  "preferGlobal": true,
   "devDependencies": {
     "jest": "^18.1.0"
   }
