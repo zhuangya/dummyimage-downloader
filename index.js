@@ -1,15 +1,10 @@
 'use strict';
 
-const Rx = require('rx');
+import Rx from 'rx';
 
-const {
-  getConfig,
-  normalizeConfig,
-  generateImageURL,
-  download
-} = require('./lib');
+import { generateImageURL, download }  from './lib.js';
 
-module.exports = (count, { config:configPath, dist }) => {
+export default function (count, { config:configPath, dist }) {
   Rx.Observable.range(1, count).map((c) => {
     const { imageURL, filename } = generateImageURL(configPath, c);
     return Rx.Observable.defer(() => download(imageURL, filename, dist));

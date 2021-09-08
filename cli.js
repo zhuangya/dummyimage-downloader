@@ -2,8 +2,8 @@
 
 'use strict';
 
-const meow = require('meow');
-const dmd = require('.');;
+import meow from 'meow';
+import dmd from './index.js';
 
 const cli = meow(`
     Usage
@@ -16,9 +16,14 @@ const cli = meow(`
     Examples
       $ dmd 4 -c colorful.yml
 `, {
-  alias: {
-    c: 'config',
-    d: 'dist'
+  importMeta: import.meta,
+  flags: {
+    config: {
+      type: 'string', alias: 'c', isRequired: true,
+    },
+    dest: {
+      type: 'string', alias: 'd', isRequired: true,
+    }
   }
 });
 
